@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея картин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Галерея картин</h1>
+    
+    <div class="thumbnails">
+        <img src="https://www.quality.spb.ru/media/k2/items/cache/dee4183b3eece6f1f1fda5b7115d2824_XL.jpg" onclick="showImage(this)" alt="Tukini">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Carpincho_en_el_Parque_Nacional_El_Palmar.jpg/640px-Carpincho_en_el_Parque_Nacional_El_Palmar.jpg" onclick="showImage(this)" alt="Kapibara">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Puma_concolor_stanleyana_-_Texas_Park_-_Lanzarote_-PC08_%28cropped%29.jpg" onclick="showImage(this)" alt="puma">
+    </div>
+
+    <div id="fullImageContainer">
+        <img id="fullImage" alt="Full-size painting">
+    </div>
+
+    <script>
+        function showImage(imgElement) {
+            const fullImage = document.getElementById('fullImage');
+            
+            fullImage.classList.remove('animate');
+            
+            fullImage.src = imgElement.src;
+            
+            setTimeout(() => {
+                fullImage.classList.add('animate');
+            }, 10);
+        }
+    </script>
+    
+</body>
+</html>
